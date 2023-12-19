@@ -1,6 +1,5 @@
 package com.company.partidoapp.clases;
 import java.util.Objects;
-import java.util.Date;
 /**
  * PartidosPlayOff
  */
@@ -17,7 +16,7 @@ public class PartidosPlayOff extends Partido{
         int cestasEquipoLocal, 
         int cestasEquipoVisitante, 
         String estadoPartido, 
-        Date fechaPartido, 
+        String fechaPartido, 
         String lugarPartido,
         String ronda)
     {
@@ -66,15 +65,17 @@ public class PartidosPlayOff extends Partido{
     }
 
     @Override
-    public void registrarPuntosLocales() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'registrarPuntosLocales'");
+    public void registrarPuntosLocales(int puntos) {
+        if(super.getEstadoPartido().equals("Jugando")){
+            super.setCestasEquipoLocal(puntos);
+        }
     }
 
     @Override
-    public void registrarPuntosVisitantes() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'registrarPuntosVisitantes'");
+    public void registrarPuntosVisitantes(int puntos) {
+        if(super.getEstadoPartido().equals("Jugando")){
+            super.setCestasEquipoVisitante(puntos);
+        }
     }
 
     

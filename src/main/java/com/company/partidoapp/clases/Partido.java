@@ -1,6 +1,5 @@
 package com.company.partidoapp.clases;
 
-import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -17,13 +16,13 @@ public abstract class Partido implements Acciones{
      * Terminado, Jugando, Cancelado. 
      */
     private String estadoPartido;
-    private Date fechaPartido;
+    private String fechaPartido;
     private String lugarPartido;
 
     public Partido() {
     }
 
-    public Partido(String equipoLocal, String equipoVisitante, int cestasEquipoLocal, int cestasEquipoVisitante, String estadoPartido, Date fechaPartido, String lugarPartido) {
+    public Partido(String equipoLocal, String equipoVisitante, int cestasEquipoLocal, int cestasEquipoVisitante, String estadoPartido, String fechaPartido, String lugarPartido) {
         this.equipoLocal = equipoLocal;
         this.equipoVisitante = equipoVisitante;
         this.cestasEquipoLocal = cestasEquipoLocal;
@@ -69,15 +68,19 @@ public abstract class Partido implements Acciones{
         return this.estadoPartido;
     }
 
-    public void setEstadoPartido(String estadoPartido) {
-        this.estadoPartido = estadoPartido;
+    public void setEstadoPartido(String estadoPartido) throws Exception {
+        if(estadoPartido.equals("Terminado") || estadoPartido.equals("Jugando") || estadoPartido.equals("Cancelado")){
+            this.estadoPartido = estadoPartido;
+        }else{
+            throw new Exception("Ingrese un parametro correcto: 'Terminado','Jugando','Cancelado'");
+        }
     }
 
-    public Date getFechaPartido() {
+    public String getFechaPartido() {
         return this.fechaPartido;
     }
 
-    public void setFechaPartido(Date fechaPartido) {
+    public void setFechaPartido(String fechaPartido) {
         this.fechaPartido = fechaPartido;
     }
 

@@ -1,12 +1,22 @@
 package com.company.partidoapp.clases;
 
+
 public class PartidosLiga extends Partido{
     private int numeroJornada;
 
     public PartidosLiga() {
     }
 
-    public PartidosLiga(int numeroJornada) {
+    public PartidosLiga(
+        String equipoLocal,
+        String equipoVisitante,
+        int cestasEquipoLocal,
+        int cestasEquipoVisitante,
+        String estadoPartido,
+        String fechaPartido,
+        String lugarPartido,
+        int numeroJornada) {
+        super(equipoLocal,equipoVisitante,cestasEquipoLocal,cestasEquipoVisitante,estadoPartido,fechaPartido,lugarPartido);
         this.numeroJornada = numeroJornada;
     }
 
@@ -38,15 +48,16 @@ public class PartidosLiga extends Partido{
     }
 
     @Override
-    public void registrarPuntosLocales() {
-        if(){
-
+    public void registrarPuntosLocales(int puntos) {
+        if(super.getEstadoPartido().equals("Jugando")){
+            super.setCestasEquipoLocal(super.getCestasEquipoLocal()+puntos);
         }
     }
 
     @Override
-    public void registrarPuntosVisitantes() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'registrarPuntosVisitantes'");
+    public void registrarPuntosVisitantes(int puntos) {
+        if(super.getEstadoPartido().equals("Jugando")){
+            super.setCestasEquipoVisitante(super.getCestasEquipoVisitante()+puntos);
+        }
     }
 }

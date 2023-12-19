@@ -1,6 +1,6 @@
 package com.company.partidoapp.clases;
 
 public interface Acciones {
-    void registrarPuntosLocales();
-    void registrarPuntosVisitantes();
+    void registrarPuntosLocales(int puntos);
+    void registrarPuntosVisitantes(int puntos);
 }
