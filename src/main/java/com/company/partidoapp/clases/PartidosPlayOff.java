@@ -1,6 +1,6 @@
 package com.company.partidoapp.clases;
 import java.util.Objects;
-
+import java.util.Date;
 /**
  * PartidosPlayOff
  */
@@ -11,7 +11,16 @@ public class PartidosPlayOff extends Partido{
     public PartidosPlayOff() {
     }
 
-    public PartidosPlayOff(String equipoLocal,String equipoVisitante, int cestasEquipoLocal, int cestasEquipoVisitante, String estadoPartido, Date fechaPartido, String lugarPartido,String ronda){
+    public PartidosPlayOff(
+        String equipoLocal,
+        String equipoVisitante, 
+        int cestasEquipoLocal, 
+        int cestasEquipoVisitante, 
+        String estadoPartido, 
+        Date fechaPartido, 
+        String lugarPartido,
+        String ronda)
+    {
         super(equipoLocal,equipoVisitante,cestasEquipoLocal,cestasEquipoVisitante,estadoPartido,fechaPartido,lugarPartido);
         this.ronda = ronda;
     }
@@ -43,7 +52,7 @@ public class PartidosPlayOff extends Partido{
 
     @Override
     public String toString() {
-        return super.toString()+"{" +
+        return super.toString()+"," +
             " ronda='" + getRonda() + "'" +
             "}";
     }
@@ -51,8 +60,9 @@ public class PartidosPlayOff extends Partido{
 
     @Override
     public String resultado() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'resultado'");
+        return "Resultados del Partido:"
+            + "\nEquipo Local: "+super.getCestasEquipoLocal()
+            + "\nEquipo Visitante: "+super.getCestasEquipoVisitante();
     }
 
     @Override

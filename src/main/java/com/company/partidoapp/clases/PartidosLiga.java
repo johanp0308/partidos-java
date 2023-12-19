@@ -1,6 +1,6 @@
 package com.company.partidoapp.clases;
 
-public class PartidosLiga extends Partidos{
+public class PartidosLiga extends Partido{
     private int numeroJornada;
 
     public PartidosLiga() {
@@ -30,4 +30,23 @@ public class PartidosLiga extends Partidos{
     }
 
 
+    @Override
+    public String toString() {
+        return super.toString()+"," +
+            " numeroJornada='" + getNumeroJornada() + "'" +
+            "}";
+    }
+
+    @Override
+    public void registrarPuntosLocales() {
+        if(){
+
+        }
+    }
+
+    @Override
+    public void registrarPuntosVisitantes() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'registrarPuntosVisitantes'");
+    }
 }

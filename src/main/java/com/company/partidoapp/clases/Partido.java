@@ -12,6 +12,10 @@ public abstract class Partido implements Acciones{
     private String equipoVisitante;
     private int cestasEquipoLocal;
     private int cestasEquipoVisitante;
+    /*
+     * Estado Partido solo tiene tres valores posibles los cuales son:
+     * Terminado, Jugando, Cancelado. 
+     */
     private String estadoPartido;
     private Date fechaPartido;
     private String lugarPartido;
@@ -106,6 +110,12 @@ public abstract class Partido implements Acciones{
             ", estadoPartido='" + getEstadoPartido() + "'" +
             ", fechaPartido='" + getFechaPartido() + "'" +
             ", lugarPartido='" + getLugarPartido() + "'" +
-            "}";
+            "";
+    }
+
+    public String resultado(){
+        return "Resultados del Partido de Basketball"
+        +"\nEquipo Local: "+getCestasEquipoLocal()
+        +"\nEquipo Visitant: "+getCestasEquipoVisitante();
     }
 }
